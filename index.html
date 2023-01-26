@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  -->
+    <div class="content">
+        <button class="France"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt enim explicabo numquam dolores itaque impedit odit voluptatum ipsa, dolore nesciunt suscipit, obcaecati aliquam fuga nobis ea ratione, voluptas veritatis blanditiis.</p></button>
+        <a href="https://www.dota2.com/home?l=russian">Dota2</a>
+    </div>
+    
+
+    <script>
+        const elem = document.querySelector(".content");
+        const elemButton= document.querySelector('.France');
+        const elemP= document.querySelector('p');
+        const elemGoogle = document.querySelector('a');
+        elemGoogle.onclick = (event) => {
+            event.preventDefault();
+            alert(event.target.tagName);
+        };
+        elem.addEventListener('click', (event) => {
+            alert(` currentTarget ${event.currentTarget} target ${event.target}`);
+        });
+        elemButton.addEventListener('click', (event) => {
+            alert(` currentTarget ${event.currentTarget} target ${event.target}`);
+        });
+        elemP.addEventListener('click', (event) => {
+            alert(` currentTarget ${event.currentTarget} target ${event.target}`);
+            event.stopPropagation()
+        });
+        
+        // document.body.onclick = function(event) {
+            // event.target.style.backgroundColor = "red";
+        // }
+        // document.body.addEventListener('click',(event)=> event.target.remove());
+    </script>
+</body>
+</html>
